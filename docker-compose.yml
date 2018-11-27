@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    depends_on:
+      - php
+    networks:
+      - docker-toolbox
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data/www:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+  php:
+    container_name: php
+    build: ./php72
+    networks:
+      - docker-toolbox
+    volumes:
+      - ./data/www:/var/www/html
+
+networks:
+  docker-toolbox:
