@@ -7,7 +7,7 @@ services:
     depends_on:
       - php
     networks:
-      - docker-toolbox
+      - backend
     ports:
       - "8080:80"
     volumes:
@@ -18,9 +18,9 @@ services:
     container_name: php
     build: ./php72
     networks:
-      - docker-toolbox
+      - backend
     volumes:
       - ./data/www:/var/www/html
 
 networks:
-  docker-toolbox:
+  backend:
