@@ -2,6 +2,6 @@
 
 ## bash
 ```
-$ docker exec -it php72 /bin/sh
+$ docker exec -it php /bin/sh
 $ docker exec -it nginx /bin/sh
 ```
