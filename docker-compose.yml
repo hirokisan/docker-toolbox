@@ -22,6 +22,7 @@ services:
       - backend
     volumes:
       - ./data/www:/var/www/html
+      - ./php72/php.ini:/usr/local/etc/php/php.ini
 
 networks:
   backend:
